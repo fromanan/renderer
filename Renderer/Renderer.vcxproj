@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{656CF298-5962-4082-83B0-03557C59B3E1}</ProjectGuid>
     <Keyword>MFCProj</Keyword>
-    <RootNamespace>Step4</RootNamespace>
+    <RootNamespace>Renderer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>Renderer</ProjectName>
   </PropertyGroup>
@@ -194,7 +194,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ShaderWnd\ShaderWnd.h" />
     <ClInclude Include="Sphere.h" />
-    <ClInclude Include="Step4.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Torus.h" />
   </ItemGroup>
@@ -213,17 +213,17 @@
     <ClCompile Include="ShaderWnd\glew.cpp" />
     <ClCompile Include="ShaderWnd\ShaderWnd.cpp" />
     <ClCompile Include="Sphere.cpp" />
-    <ClCompile Include="Step4.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Torus.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Step4.rc" />
+    <ResourceCompile Include="Renderer.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\Step4.rc2" />
+    <None Include="res\Renderer.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Step4.ico" />
+    <Image Include="res\Renderer.ico" />
     <Image Include="res\Toolbar.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

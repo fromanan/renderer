@@ -1,5 +1,5 @@
 
-// Step4.h : main header file for the Step4 application
+// Renderer.h : main header file for the Renderer application
 //
 #pragma once
 
@@ -10,14 +10,14 @@
 #include "resource.h"       // main symbols
 
 
-// CStep4App:
-// See Step4.cpp for the implementation of this class
+// CRendererApp:
+// See Renderer.cpp for the implementation of this class
 //
 
-class CStep4App : public CWinApp
+class CRendererApp : public CWinApp
 {
 public:
-	CStep4App() noexcept;
+	CRendererApp() noexcept;
 
 
 // Overrides
@@ -32,4 +32,4 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-extern CStep4App theApp;
+extern CRendererApp theApp;

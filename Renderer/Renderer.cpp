@@ -1,12 +1,12 @@
 
-// Step4.cpp : Defines the class behaviors for the application.
+// Renderer.cpp : Defines the class behaviors for the application.
 //
 
 #include "pch.h"
 #include "framework.h"
 #include "afxwinappex.h"
 #include "afxdialogex.h"
-#include "Step4.h"
+#include "Renderer.h"
 #include "MainFrm.h"
 
 
@@ -15,16 +15,16 @@
 #endif
 
 
-// CStep4App
+// CRendererApp
 
-BEGIN_MESSAGE_MAP(CStep4App, CWinApp)
-	ON_COMMAND(ID_APP_ABOUT, &CStep4App::OnAppAbout)
+BEGIN_MESSAGE_MAP(CRendererApp, CWinApp)
+	ON_COMMAND(ID_APP_ABOUT, &CRendererApp::OnAppAbout)
 END_MESSAGE_MAP()
 
 
-// CStep4App construction
+// CRendererApp construction
 
-CStep4App::CStep4App() noexcept
+CRendererApp::CRendererApp() noexcept
 {
 	// support Restart Manager
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_ALL_ASPECTS;
@@ -37,20 +37,20 @@ CStep4App::CStep4App() noexcept
 
 	// TODO: replace application ID string below with unique ID string; recommended
 	// format for string is CompanyName.ProductName.SubProduct.VersionInformation
-	SetAppID(_T("Step4.AppID.NoVersion"));
+	SetAppID(_T("Renderer.AppID.NoVersion"));
 
 	// TODO: add construction code here,
 	// Place all significant initialization in InitInstance
 }
 
-// The one and only CStep4App object
+// The one and only CRendererApp object
 
-CStep4App theApp;
+CRendererApp theApp;
 
 
-// CStep4App initialization
+// CRendererApp initialization
 
-BOOL CStep4App::InitInstance()
+BOOL CRendererApp::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
@@ -110,7 +110,7 @@ BOOL CStep4App::InitInstance()
 	return TRUE;
 }
 
-int CStep4App::ExitInstance()
+int CRendererApp::ExitInstance()
 {
 	//TODO: handle additional resources you may have added
 	AfxOleTerm(FALSE);
@@ -118,7 +118,7 @@ int CStep4App::ExitInstance()
 	return CWinApp::ExitInstance();
 }
 
-// CStep4App message handlers
+// CRendererApp message handlers
 
 
 // CAboutDlg dialog used for App About
@@ -154,13 +154,13 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 // App command to run the dialog
-void CStep4App::OnAppAbout()
+void CRendererApp::OnAppAbout()
 {
 	CAboutDlg aboutDlg;
 	aboutDlg.DoModal();
 }
 
-// CStep4App message handlers
+// CRendererApp message handlers
 
 
 

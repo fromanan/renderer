@@ -1,11 +1,11 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by Step4.rc
+// Used by Renderer.rc
 //
 #define IDD_ABOUTBOX				100
 #define IDP_OLE_INIT_FAILED			100
 #define IDR_MAINFRAME				128
-#define IDR_Step4TYPE				130
+#define IDR_RendererTYPE				130
 
 // Next default values for new objects
 //
