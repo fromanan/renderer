@@ -1,111 +1,161 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="models">
+      <UniqueIdentifier>{2983320E-1525-5DE4-FEDF-7038EA20E434}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="res">
+      <UniqueIdentifier>{4FA5880B-BBAE-887C-442A-9F7CB032947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Primitives">
+      <UniqueIdentifier>{E8B2543A-D480-4840-BD14-B966A98124A5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\graphics">
+      <UniqueIdentifier>{2DF282EC-1955-1291-C2DA-4A47AE1CDE13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="textures">
+      <UniqueIdentifier>{C9F8A108-B5C5-FC13-DEDE-EABBCA0A32A2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Renderer.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\ChildView.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\MainFrm.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Mesh.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="MainFrm.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Primitives\Sphere.h">
+      <Filter>src\Primitives</Filter>
     </ClInclude>
-    <ClInclude Include="ChildView.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Primitives\Torus.h">
+      <Filter>src\Primitives</Filter>
     </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Renderer.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderWnd\ShaderWnd.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\framework.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\GrCubeTexture.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\graphics\GrCubeTexture.h">
+      <Filter>src\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="graphics\GrTexture.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\graphics\GrTexture.h">
+      <Filter>src\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Mesh.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\graphics\Texture.h">
+      <Filter>src\graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Sphere.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\pch.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="Torus.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\targetver.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\ChildView.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="MainFrm.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\MainFrm.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="ChildView.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Mesh.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Primitives\Sphere.cpp">
+      <Filter>src\Primitives</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderWnd\glew.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Primitives\Torus.cpp">
+      <Filter>src\Primitives</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderWnd\ShaderWnd.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Renderer.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\GrCubeTexture.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\graphics\GrCubeTexture.cpp">
+      <Filter>src\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="graphics\GrTexture.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\graphics\GrTexture.cpp">
+      <Filter>src\graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Sphere.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Torus.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Renderer.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Renderer.aps" />
+    <None Include="models\bunny.mtl">
+      <Filter>models</Filter>
+    </None>
+    <None Include="models\bunny.obj">
+      <Filter>models</Filter>
+    </None>
+    <None Include="models\fish4.mtl">
+      <Filter>models</Filter>
+    </None>
+    <None Include="models\fish4.obj">
+      <Filter>models</Filter>
+    </None>
+    <None Include="res\Renderer.ico">
+      <Filter>res</Filter>
+    </None>
     <None Include="res\Renderer.rc2">
-      <Filter>Resource Files</Filter>
+      <Filter>res</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Renderer.ico">
-      <Filter>Resource Files</Filter>
+    <ResourceCompile Include="Renderer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="models\BLUEGILL.bmp">
+      <Filter>models</Filter>
     </Image>
-    <Image Include="res\Toolbar.bmp">
-      <Filter>Resource Files</Filter>
+    <Image Include="models\bunny-atlas.jpg">
+      <Filter>models</Filter>
+    </Image>
+    <Image Include="res\Renderer.bmp">
+      <Filter>res</Filter>
+    </Image>
+    <Image Include="textures\back.jpg">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\bottom.jpg">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\bumpmap.jpg">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\front.jpg">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\left.jpg">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\marble02.bmp">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\marble03.bmp">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\marble10.bmp">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\plank01.bmp">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\right.jpg">
+      <Filter>textures</Filter>
+    </Image>
+    <Image Include="textures\top.jpg">
+      <Filter>textures</Filter>
     </Image>
   </ItemGroup>
 </Project>

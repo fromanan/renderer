@@ -14,7 +14,7 @@ Supports Microsoft Windows-32 bit (x86) Builds **ONLY**
 1. OpenGL - A graphics library
 2. [GLEW](https://github.com/nigels-com/glew) - An extension library for OpenGL
 3. GLM - A mathematical extensions library
-4. [Microsoft 2005 C++ Redistributables](http://www.microsoft.com/download/en/details.aspx?id=26347%20%20) - Runtime redistributables
+4. [Microsoft 2005 C++ Redistributables](https://www.microsoft.com/en-US/download/details.aspx?id=26347) - Runtime redistributables
 
 ## Common Issues & Fixes
 
