@@ -45,10 +45,16 @@
     <ClInclude Include="src\Primitives\Torus.h">
       <Filter>src\Primitives</Filter>
     </ClInclude>
+    <ClInclude Include="src\Quaternion.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Renderer.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vector3.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Vector4.h">
