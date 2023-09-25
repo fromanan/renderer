@@ -66,8 +66,26 @@ project "Renderer"
 	links
 	{
 		"ShaderWnd",
+
 		"opengl32.lib",
-		"glu32.lib"
+		"glu32.lib",
+		"winmm.lib",
+
+		"dwmapi.lib",
+		"advapi32.lib",
+
+		"VERSION.dll",
+		"MSVCP140D.dll",
+		"Mfc140d.dll",
+		"KERNEL32.dll",
+		"USER32.dll",
+		"GDI32.dll",
+		"SHELL32.dll",
+		"OLEAUT32.dll",
+		"VCRUNTIME140D.dll",
+		"Ucrtgbased.dll",
+		"WS2_32.dll"
+	}
 	}
 
 	flags { "MFC" }
