@@ -16,35 +16,28 @@
 
 // CChildView window
 
-class CChildView : public CShaderWnd
+class CChildView final : public CShaderWnd
 {
 // Construction
 public:
 	CChildView();
 
-// Attributes
-public:
-
-// Operations
-public:
-
 // Overrides
-	protected:
-	virtual BOOL PreCreateWindow(CREATESTRUCT& cs);
+protected:
+	BOOL PreCreateWindow(CREATESTRUCT& cs) override;
 
 // Implementation
 public:
-	virtual ~CChildView();
+	~CChildView() override;
 
-	// Generated message map functions
+// Generated message map functions
 protected:
 	DECLARE_MESSAGE_MAP()
 
 public:
-	virtual void RenderGL();
-	virtual void InitGL();
-	virtual void CleanGL();
-
+	void RenderGL() override;
+	void InitGL() override;
+	void CleanGL() override;
 private:
 	GLuint m_program;
 	CGrTexture m_bunnyTex;
