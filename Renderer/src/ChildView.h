@@ -7,8 +7,6 @@
 #include "ShaderWnd.h"
 
 #include "Mesh.h"
-#include "Sphere.h"
-#include "Torus.h"
 #include "GrTexture.h"
 #include "GrCubeTexture.h"
 

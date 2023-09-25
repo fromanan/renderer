@@ -6,10 +6,6 @@
 
 #include "Renderer.h"
 
-#ifdef _DEBUG
-#include <iostream>
-#endif
-
 #include "AboutDlg.h"
 #include "MainFrm.h"
 
