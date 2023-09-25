@@ -42,6 +42,9 @@
     <ClInclude Include="src\Resource.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Vector4.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\framework.h">
       <Filter>src</Filter>
     </ClInclude>

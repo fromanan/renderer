@@ -178,8 +178,11 @@ xcopy /Q /E /Y /I vendor\ShaderWnd\shaders ..\bin\Dist-windows-x86\$(ProjectName
     <ClInclude Include="src\Mesh.h" />
     <ClInclude Include="src\Primitives\Sphere.h" />
     <ClInclude Include="src\Primitives\Torus.h" />
+    <ClInclude Include="src\Quaternion.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Resource.h" />
+    <ClInclude Include="src\Vector3.h" />
+    <ClInclude Include="src\Vector4.h" />
     <ClInclude Include="src\framework.h" />
     <ClInclude Include="src\graphics\GrCubeTexture.h" />
     <ClInclude Include="src\graphics\GrTexture.h" />
