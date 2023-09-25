@@ -86,6 +86,11 @@ project "Renderer"
 		"Ucrtgbased.dll",
 		"WS2_32.dll"
 	}
+
+	defines
+	{
+		"WINDOWS_EXPORT_ALL_SYMBOLS",
+		"_UNICODE"
 	}
 
 	flags { "MFC" }
