@@ -1,5 +1,7 @@
 workspace "Renderer"
 	architecture "x86"
+package.path = './?.lua;' .. package.path;
+PremakeHelpers = require("PremakeHelpers");
 
 	configurations
 	{
