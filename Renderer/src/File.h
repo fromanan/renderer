@@ -47,4 +47,9 @@ public:
 
         return { };
     }
+
+    static std::string GetAbsolutePath(const std::string& filepath)
+    {
+        return GetRootPath() + "/" + filepath;
+    }
 };

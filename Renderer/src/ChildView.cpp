@@ -5,8 +5,8 @@
 #include "pch.h"
 
 #include "framework.h"
-#include "Renderer.h"
 #include "ShaderHeaders.h"
+#include "ShaderPaths.h"
 #include "ChildView.h"
 
 #ifdef _DEBUG
@@ -48,36 +48,36 @@ void CChildView::InitGL()
 	m_cubeTex.LoadFiles(L"textures/right.jpg", L"textures/left.jpg", L"textures/top.jpg",
 		L"textures/bottom.jpg", L"textures/front.jpg", L"textures/back.jpg");
 	m_skybox.CreateCube();
-	m_skybox.m_program = LoadShaders("shaders/vertexSky.glsl", "shaders/fragmentSky.glsl");
+	m_skybox.m_program = LoadShaders(VERTEX_SKY, FRAGMENT_SKY);
 	m_skybox.InitGL();
 
 	// Load the Bunny
 	m_bunnyTex.LoadFile(L"models/bunny-atlas.jpg");
 	m_bunny.LoadOBJ("models/bunny.obj");
-	m_bunny.m_program = LoadShaders("shaders/vertex.glsl", "shaders/fragment.glsl");
+	m_bunny.m_program = LoadShaders(VERTEX_MESH, FRAGMENT_MESH);
 	m_bunny.InitGL();
 
 	// Load the Fish
 	m_fishTex.LoadFile(L"models/BLUEGILL.bmp");
 	m_fish.LoadOBJ("models/fish4.obj");
-	m_fish.m_program = LoadShaders("shaders/vertex.glsl", "shaders/fragment.glsl");
+	m_fish.m_program = LoadShaders(VERTEX_MESH, FRAGMENT_MESH);
 	m_fish.InitGL();
 
 	// Regular Sphere
 	m_sphereTex.LoadFile(L"textures/bumpmap.jpg");
 	m_sphere.SetRadius(3);
-	m_sphere.m_program = LoadShaders("shaders/vertexSphere.glsl", "shaders/fragmentSphere.glsl");
+	m_sphere.m_program = LoadShaders(VERTEX_SPHERE, FRAGMENT_SPHERE);
 	m_sphere.InitGL();
 
 	// Metallic Sphere
 	m_metallicSphere.SetRadius(3);
-	m_metallicSphere.m_program = LoadShaders("shaders/vertexSphere2.glsl", "shaders/fragmentSphere2.glsl");
+	m_metallicSphere.m_program = LoadShaders(VERTEX_SPHERE_2, FRAGMENT_SPHERE_2);
 	m_metallicSphere.InitGL();
 
 	// Torus
 	//m_torus.SetR1(3);
 	//m_torus.SetR2(3);
-	m_torus.m_program = LoadShaders("shaders/vertexSphere2.glsl", "shaders/fragmentSphere2.glsl");
+	m_torus.m_program = LoadShaders(VERTEX_SPHERE_2, FRAGMENT_SPHERE_2);
 	m_torus.InitGL();
 }
 
@@ -98,25 +98,25 @@ void CChildView::RenderGL()
 	glUniformMatrix4fv(m_nPVM, 1, GL_FALSE, value_ptr(m_mPVM));
 	glUniformMatrix4fv(m_nVM, 1, GL_FALSE, value_ptr(m_mVM));
 
-	vec4 light_position(-5.f, 5.f, -5.f, 0.f);
-	vec4 light_ambient(0.2f, 0.2f, 0.2f, 1.f);
-	vec4 light_diffuse(1.f, 1.f, 1.f, 1.f);
-	vec4 light_specular(1.f, 1.f, 1.f, 1.f);
+	vec4 lightPosition(-5.f, 5.f, -5.f, 0.f);
+	vec4 lightAmbient(0.2f, 0.2f, 0.2f, 1.f);
+	vec4 lightDiffuse(1.f, 1.f, 1.f, 1.f);
+	vec4 lightSpecular(1.f, 1.f, 1.f, 1.f);
 
-	vec4 material_ambient(1.f, 1.f, 1.f, 1.f);
-	vec4 material_diffuse(1.f, 1.f, 1.f, 1.f);
-	vec4 material_specular(1.f, 1.f, 1.f, 1.f);
-	float material_shininess = 100.0f;
+	vec4 materialAmbient(1.f, 1.f, 1.f, 1.f);
+	vec4 materialDiffuse(1.f, 1.f, 1.f, 1.f);
+	vec4 materialSpecular(1.f, 1.f, 1.f, 1.f);
+	float materialShininess = 100.0f;
 
-	vec4 ambient_product = light_ambient * material_ambient;
-	vec4 diffuse_product = light_diffuse * material_diffuse;
-	vec4 specular_product = light_specular * material_specular;
+	vec4 ambientProduct = lightAmbient * materialAmbient;
+	vec4 diffuseProduct = lightDiffuse * materialDiffuse;
+	vec4 specularProduct = lightSpecular * materialSpecular;
 
-	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambient_product));
-	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuse_product));
-	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specular_product));
-	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(light_position));
-	glUniform1f(glGetUniformLocation(m_program, "Shininess"), material_shininess);
+	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambientProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuseProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specularProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(lightPosition));
+	glUniform1f(glGetUniformLocation(m_program, "Shininess"), materialShininess);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_bunnyTex.TexName());
@@ -140,11 +140,11 @@ void CChildView::RenderGL()
 	glUniformMatrix4fv(m_nPVM, 1, GL_FALSE, value_ptr(PVM));
 	glUniformMatrix4fv(m_nVM, 1, GL_FALSE, value_ptr(VM));
 
-	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambient_product));
-	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuse_product));
-	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specular_product));
-	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(light_position));
-	glUniform1f(glGetUniformLocation(m_program, "Shininess"), material_shininess);
+	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambientProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuseProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specularProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(lightPosition));
+	glUniform1f(glGetUniformLocation(m_program, "Shininess"), materialShininess);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_fishTex.TexName());
