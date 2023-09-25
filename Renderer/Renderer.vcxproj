@@ -364,6 +364,7 @@ xcopy /Q /E /Y /I vendor\ShaderWnd\shaders ..\bin\Dist-windows-x86_64\$(ProjectN
     <ClInclude Include="src\AboutDlg.h" />
     <ClInclude Include="src\ChildView.h" />
     <ClInclude Include="src\Drawawble.h" />
+    <ClInclude Include="src\File.h" />
     <ClInclude Include="src\MainFrm.h" />
     <ClInclude Include="src\Mesh.h" />
     <ClInclude Include="src\Primitives\Sphere.h" />
