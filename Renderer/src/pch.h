@@ -14,6 +14,11 @@
 #include <fstream>
 #include <sstream>
 #include <cmath>
+#include <memory>
+
+#ifdef _DEBUG
+#include <iostream>
+#endif
 
 // Graphics Libraries
 #include <glew.h>

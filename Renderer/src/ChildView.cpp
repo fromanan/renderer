@@ -4,9 +4,9 @@
 
 #include "pch.h"
 
-#include "ShaderPaths.h"
 #include "ChildView.h"
 
+#include "ShaderPaths.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
