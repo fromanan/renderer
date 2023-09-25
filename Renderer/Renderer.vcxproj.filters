@@ -27,6 +27,8 @@
     <ClInclude Include="src\ChildView.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\File.h">
+      <Filter>src</Filter>
     <ClInclude Include="src\MainFrm.h">
       <Filter>src</Filter>
     </ClInclude>
