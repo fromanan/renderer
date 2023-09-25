@@ -29,6 +29,7 @@
     </ClInclude>
     <ClInclude Include="src\File.h">
       <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\MainFrm.h">
       <Filter>src</Filter>
     </ClInclude>
