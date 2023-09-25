@@ -21,7 +21,7 @@ workspace (PROJECT_ROOT)
 
 	startproject (PROJECT_ROOT)
 
-include "Renderer/vendor/ShaderWnd"
+include (IncludeDir.ShaderWnd)
 
 project (PROJECT_ROOT)
 	location (PROJECT_ROOT)
@@ -32,7 +32,7 @@ project (PROJECT_ROOT)
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("obj/" .. outputdir .. "/%{prj.name}")
 
-	entrypoint "wWinMainCRTStartup"
+	entrypoint ("wWinMainCRTStartup")
 
 	pchheader ("pch.h")
 	pchsource (PROJECT_ROOT .. "/src/pch.cpp")
