@@ -14,7 +14,9 @@ class CRendererApp : public CWinApp
 public:
 	CRendererApp() noexcept;
 
+	#if _DEBUG
 	int Run() override;
+	#endif
 
 // Overrides
 public:

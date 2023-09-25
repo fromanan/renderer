@@ -41,16 +41,17 @@ CRendererApp::CRendererApp() noexcept
 	// Place all significant initialization in InitInstance
 }
 
+#ifdef _DEBUG
 int CRendererApp::Run()
 {
-	// TODO: REMOVE
 	try {
 		return CWinApp::Run();
 	} catch (std::exception& exception) {
-		AfxMessageBox(IDP_OLE_INIT_FAILED);
+		std::cout << "Application failed to execute with message: " << exception.what() << std::endl;
 		return 1;
 	}
 }
+#endif
 
 // The one and only CRendererApp object
 
@@ -102,9 +103,16 @@ BOOL CRendererApp::InitInstance()
 		return FALSE;
 	m_pMainWnd = pFrame;
 	// create and load the frame with its resources
-	pFrame->LoadFrame(IDR_MAINFRAME,
-		WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, nullptr,
-		nullptr);
+	#ifdef _DEBUG
+	try {
+		pFrame->LoadFrame(IDR_MAINFRAME, WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, nullptr, nullptr);
+	} catch (std::exception& exception) {
+		std::cout << "Failed to load mainframe with message: " << exception.what() << std::endl;
+		return FALSE;
+	}
+	#else
+	pFrame->LoadFrame(IDR_MAINFRAME, WS_OVERLAPPEDWINDOW | FWS_ADDTOTITLE, nullptr, nullptr);
+	#endif
 
 	// The one and only window has been initialized, so show and update it
 	pFrame->ShowWindow(SW_SHOW);
