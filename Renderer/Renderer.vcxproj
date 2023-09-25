@@ -173,6 +173,7 @@ xcopy /Q /E /Y /I vendor\ShaderWnd\shaders ..\bin\Dist-windows-x86\$(ProjectName
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\AboutDlg.h" />
     <ClInclude Include="src\ChildView.h" />
     <ClInclude Include="src\Drawawble.h" />
     <ClInclude Include="src\MainFrm.h" />
@@ -192,6 +193,7 @@ xcopy /Q /E /Y /I vendor\ShaderWnd\shaders ..\bin\Dist-windows-x86\$(ProjectName
     <ClInclude Include="src\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\AboutDlg.cpp" />
     <ClCompile Include="src\ChildView.cpp" />
     <ClCompile Include="src\MainFrm.cpp" />
     <ClCompile Include="src\Mesh.cpp" />
