@@ -1,4 +1,3 @@
-workspace "Renderer"
 	architecture "x86"
 package.path = './?.lua;' .. package.path;
 PremakeHelpers = require("PremakeHelpers");
@@ -20,14 +19,12 @@ workspace (PROJECT_ROOT)
 		"Dist"
 	}
 
-	startproject "Renderer"
-
 	startproject (PROJECT_ROOT)
 
 include "Renderer/vendor/ShaderWnd"
 
-project "Renderer"
-	location "Renderer"
+project (PROJECT_ROOT)
+	location (PROJECT_ROOT)
 	kind "ConsoleApp"
 	language "C++"
 	staticruntime "off"
@@ -37,8 +34,8 @@ project "Renderer"
 
 	entrypoint "wWinMainCRTStartup"
 
-	pchheader "pch.h"
-	pchsource "Renderer/src/pch.cpp"
+	pchheader ("pch.h")
+	pchsource (PROJECT_ROOT .. "/src/pch.cpp")
 
 	files
 	{
