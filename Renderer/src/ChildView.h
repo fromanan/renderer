@@ -46,6 +46,7 @@ public:
 	virtual void CleanGL();
 
 private:
+	GLuint m_program;
 	CGrTexture m_bunnyTex;
 	CGrTexture m_fishTex;
 	CGrTexture m_sphereTex;
