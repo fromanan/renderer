@@ -3,13 +3,12 @@
 //
 #pragma once
 
-#include "resource.h"       // main symbols
+#include "Resource.h"       // main symbols
 
 // CRendererApp:
 // See Renderer.cpp for the implementation of this class
 //
-
-class CRendererApp : public CWinApp
+class CRendererApp final : public CWinApp
 {
 public:
 	CRendererApp() noexcept;
@@ -24,7 +23,6 @@ public:
 	int ExitInstance() override;
 
 // Implementation
-
 public:
 	afx_msg void OnAppAbout();
 	DECLARE_MESSAGE_MAP()

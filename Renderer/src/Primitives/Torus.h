@@ -50,7 +50,6 @@ public:
 
 
     /// Shader-based OpenGL Properties
-
     void InitGL();
     void RenderGL();
     void CleanGL();

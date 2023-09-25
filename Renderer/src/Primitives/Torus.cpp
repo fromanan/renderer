@@ -24,11 +24,7 @@ CTorus::CTorus()
     m_steps2 = 20;
 }
 
-
-CTorus::~CTorus()
-{
-}
-
+CTorus::~CTorus() = default;
 
 void CTorus::InitGL()
 {
@@ -40,25 +36,24 @@ void CTorus::InitGL()
     glGenBuffers(1, &m_vertexVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_vertexVBO);
     glBufferData(GL_ARRAY_BUFFER, vertexArray.size() * sizeof(vec3),
-                 &vertexArray[0], GL_STATIC_DRAW);
+                 vertexArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 
     glGenBuffers(1, &m_normalVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_normalVBO);
     glBufferData(GL_ARRAY_BUFFER, normalArray.size() * sizeof(vec3),
-                 &normalArray[0], GL_STATIC_DRAW);
+                 normalArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 
     glGenBuffers(1, &m_texVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_texVBO);
     glBufferData(GL_ARRAY_BUFFER, texArray.size() * sizeof(vec2),
-                 &texArray[0], GL_STATIC_DRAW);
+                 texArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 0, nullptr);
 }
-
 
 //
 // Name :         CChildView::Draw()
@@ -113,17 +108,16 @@ void CTorus::Draw()
 void CTorus::TorusVertex(double a1, double r1, double a2, double r2)
 {
     double n[3], v[3];
-    double tx, ty;
 
     // Some sines and cosines we'll need.
-    double ca1 = cos(a1);
-    double sa1 = sin(a1);
-    double ca2 = cos(a2);
-    double sa2 = sin(a2);
+    const double ca1 = cos(a1);
+    const double sa1 = sin(a1);
+    const double ca2 = cos(a2);
+    const double sa2 = sin(a2);
 
     // What is the center of the slice we are on.
-    double centerx = r1 * ca1;
-    double centerz = -r1 * sa1; // Note, y is zero
+    const double centerx = r1 * ca1;
+    const double centerz = -r1 * sa1; // Note, y is zero
 
     // Compute the surface normal
     n[0] = ca2 * ca1; // x
@@ -140,9 +134,9 @@ void CTorus::TorusVertex(double a1, double r1, double a2, double r2)
     const double ty = 2. * a2 / M_2PI;
 
     // Push the Points to the Arrays
-    texArray.push_back(vec2(tx, ty));
-    vertexArray.push_back(vec3(v[0], v[1], v[2]));
-    normalArray.push_back(vec3(n[0], n[1], n[2]));
+    texArray.emplace_back(tx, ty);
+    vertexArray.emplace_back(v[0], v[1], v[2]);
+    normalArray.emplace_back(n[0], n[1], n[2]);
 }
 
 void CTorus::RenderGL()
