@@ -23,7 +23,6 @@ project "Renderer"
 	location "Renderer"
 	kind "ConsoleApp"
 	language "C++"
-	runtime "Release"
 	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
@@ -101,16 +100,35 @@ project "Renderer"
 		("{COPYDIR} vendor/ShaderWnd/shaders ../bin/" .. outputdir .. "/%{prj.name}/shaders")
 	}
 
+	linkoptions
+	{
+		"/NODEFAULTLIB:library"
+	}
+
+	filter "platforms:Win32"
+		architecture "x86"
+
+	filter "platforms:Win64"
+    	architecture "x64"
+
 	filter "system:windows"
 		cppdialect "C++17"
 		systemversion "latest"
-		defines { "WIN32", "NDEBUG" }
+		links { "user32", "gdi32" }
+		--defines { "WIN32" }
 
 	filter "configurations:Debug"
 		symbols "On"
+		defines { "_DEBUG" }
+		links { "msvcrtd.lib" }
+		runtime "Debug"
 
 	filter "configurations:Release"
 		optimize "On"
+		links { "msvcrt.lib" }
+		runtime "Release"
 
 	filter "configurations:Dist"
 		optimize "On"
+		links { "msvcrt.lib" }
+		runtime "Release"
