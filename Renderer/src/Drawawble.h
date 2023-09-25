@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ShaderHeaders.h"
+#include "GrTexture.h"
 
-#include "graphics/GrTexture.h"
+using namespace glm;
 
 class Drawable
 {

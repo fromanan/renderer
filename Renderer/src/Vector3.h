@@ -1,9 +1,7 @@
 #pragma once
 
-#include "ShaderHeaders.h"
-
 class Vector3
 {
 public:
-    inline static vec3 One = vec3{1., 1., 1.};
+    inline static glm::vec3 One = glm::vec3{1., 1., 1.};
 };

@@ -6,10 +6,25 @@
 
 #pragma once
 
-// add headers that you want to pre-compile here
 #include "framework.h"
+
+// Standard Template Library
 #include <vector>
 #include <string>
+#include <fstream>
+#include <sstream>
+#include <cmath>
 
-constexpr double M_PI = 3.1415926535897932384626433832795;
-constexpr double M_2PI = 2. * M_PI;
+// Graphics Libraries
+#include <glew.h>
+#include <glext.h>
+#include <wglext.h>
+#include <glm.hpp>
+#include <constants.hpp>
+#include <matrix_transform.hpp>
+#include <type_ptr.hpp>
+#include <gl/gl.h>
+
+// Constants
+constexpr double M_PI =  3.1415926535897932384626433832795;
+constexpr double M_TAU = 6.2831853071795864769252867665590;

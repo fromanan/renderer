@@ -1,9 +1,8 @@
 #pragma once
 
-#include "ShaderHeaders.h"
-
 #include "Drawawble.h"
-#include "graphics/GrTexture.h"
+
+using namespace glm;
 
 //! This class allows you to draw a torus
 

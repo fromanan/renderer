@@ -4,15 +4,13 @@
 
 #pragma once
 
-#include "ShaderHeaders.h"
-
 #include "ShaderWnd.h"
 
 #include "Mesh.h"
-#include "Primitives/Sphere.h"
-#include "Primitives/Torus.h"
-#include "graphics/GrTexture.h"
-#include "graphics/GrCubeTexture.h"
+#include "Sphere.h"
+#include "Torus.h"
+#include "GrTexture.h"
+#include "GrCubeTexture.h"
 
 // CChildView window
 

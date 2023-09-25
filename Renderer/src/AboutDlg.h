@@ -2,9 +2,6 @@
 
 #include "pch.h"
 
-#include "framework.h"
-#include "afxdialogex.h"
-
 // CRendererApp message handlers
 
 // CAboutDlg dialog used for App About

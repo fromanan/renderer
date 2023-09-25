@@ -5,8 +5,6 @@
 
 #include "ChildView.h"
 
-#include "ShaderWnd.h"
-
 class CMainFrame : public CFrameWnd
 {
 public:

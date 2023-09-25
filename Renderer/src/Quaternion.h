@@ -1,7 +1,5 @@
 #pragma once
 
-#include "ShaderHeaders.h"
-
 class Quaternion
 {
 public:

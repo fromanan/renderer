@@ -4,12 +4,11 @@
 
 #include "pch.h"
 
-#include "framework.h"
-#include "afxdialogex.h"
-
 #include "Renderer.h"
 
+#ifdef _DEBUG
 #include <iostream>
+#endif
 
 #include "AboutDlg.h"
 #include "MainFrm.h"

@@ -24,6 +24,7 @@
 #endif
 
 #include <afxcontrolbars.h>     // MFC support for ribbons and control bars
+#include <afxdialogex.h>
 
 #ifdef _UNICODE
     #if defined _M_IX86

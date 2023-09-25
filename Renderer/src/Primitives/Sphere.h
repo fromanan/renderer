@@ -1,9 +1,6 @@
 #pragma once
 
-#include "ShaderHeaders.h"
-
 #include "Drawawble.h"
-#include "graphics/GrTexture.h"
 
 class CSphere : public Drawable
 {

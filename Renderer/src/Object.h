@@ -1,12 +1,9 @@
 #pragma once
 
-#include "ShaderHeaders.h"
-
 #include "Mesh.h"
 #include "Transform.h"
 #include "Material.h"
-
-#include "graphics/GrTexture.h"
+#include "GrTexture.h"
 
 struct Object
 {

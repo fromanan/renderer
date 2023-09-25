@@ -1,6 +1,6 @@
 #include "pch.h"
+
 #include "Sphere.h"
-#include <cmath>
 
 inline void Normalize3(GLdouble* v)
 {
@@ -81,13 +81,13 @@ void CSphere::SphereFace(int p_recurse, double p_radius, double* a, double* b, d
     else
     {
         // What's the texture coordinate for this normal?
-        double tx1 = atan2(a[0], a[2]) / M_2PI + 0.5;
+        double tx1 = atan2(a[0], a[2]) / M_TAU + 0.5;
         double ty1 = asin(a[1]) / M_PI + .5;
         texArray.emplace_back(tx1, ty1);
         normalArray.emplace_back(a[0], a[1], a[2]);
         vertexArray.emplace_back(a[0] * p_radius, a[1] * p_radius, a[2] * p_radius);
 
-        double tx2 = atan2(b[0], b[2]) / M_2PI + 0.5;
+        double tx2 = atan2(b[0], b[2]) / M_TAU + 0.5;
         double ty2 = asin(b[1]) / M_PI + .5;
         // Test for this coordinate on the other side of the
         // texture from the first coordinate.
@@ -100,7 +100,7 @@ void CSphere::SphereFace(int p_recurse, double p_radius, double* a, double* b, d
         vertexArray.emplace_back(b[0] * p_radius, b[1] * p_radius, b[2] * p_radius);
 
 
-        double tx3 = atan2(c[0], c[2]) / M_2PI + 0.5;
+        double tx3 = atan2(c[0], c[2]) / M_TAU + 0.5;
         double ty3 = asin(c[1]) / M_PI + .5;
         // Test for this coordinate on the other side of the
         // texture from the first coordinate.

@@ -1,11 +1,9 @@
 #pragma once
 
-#include "ShaderHeaders.h"
-
 #include "ShaderWnd.h"
 
-#include "Primitives/Sphere.h"
-#include "Primitives/Torus.h"
+#include "Sphere.h"
+#include "Torus.h"
 #include "Mesh.h"
 
 class MeshFactory

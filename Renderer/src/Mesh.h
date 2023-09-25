@@ -1,7 +1,5 @@
 #pragma once
 
-#include "ShaderHeaders.h"
-
 #include "Drawawble.h"
 
 class CMesh : public Drawable

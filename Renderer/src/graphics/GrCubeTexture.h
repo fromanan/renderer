@@ -1,6 +1,8 @@
 //Cubemap wrapper based on CB Owen's texture code.
 //Version 1.0 by Y Tong
+
 #pragma once
+
 #include "GrTexture.h"
 
 class LibGrafx CGrCubeTexture  

@@ -5,16 +5,11 @@
 
 #pragma once
 
-#if !defined(_GRTEXTURE_H)
-#define _GRTEXTURE_H
-
-#if !defined(LibGrafx)
+#ifndef LibGrafx
 #define LibGrafx
 #endif
 
 #include <atlimage.h>
-#include <fstream>
-#include <GL/gl.h>
 
 //! Class to load and utilize texture files in OpenGL programs.
 
@@ -190,5 +185,3 @@ private:
     // The actual texture image data
     BYTE ** m_image;
 };
-
-#endif 

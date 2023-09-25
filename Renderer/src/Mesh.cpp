@@ -2,15 +2,9 @@
 
 #include "Mesh.h"
 
-#include <fstream>      // For input streams from files
-#include <string>       // For the string type
-#include <sstream>      // For streams from strings
-
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-
-using namespace std;
 
 CMesh::CMesh()
 {
@@ -137,19 +131,19 @@ void CMesh::ComputeSmoothNormals()
 
 void CMesh::LoadOBJ(const char* filename)
 {
-    ifstream str(filename);
+    std::ifstream str(filename);
     if (!str)
     {
         AfxMessageBox(L"File not found");
         return;
     }
 
-    string line;
+    std::string line;
     while (getline(str, line))
     {
-        istringstream lstr(line);
+        std::istringstream lstr(line);
 
-        string code;
+        std::string code;
         lstr >> code;
         if (code == "v")
         {

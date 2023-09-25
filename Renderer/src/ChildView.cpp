@@ -4,14 +4,14 @@
 
 #include "pch.h"
 
-#include "framework.h"
-#include "ShaderHeaders.h"
 #include "ShaderPaths.h"
 #include "ChildView.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
+
+using namespace glm;
 
 // CChildView
 

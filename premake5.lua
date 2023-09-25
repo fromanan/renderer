@@ -67,6 +67,9 @@ project (PROJECT_ROOT)
 	includedirs
 	{
 		"%{prj.name}/src",
+		"%{prj.name}/src/graphics",
+		"%{prj.name}/src/Primitives",
+
 		"%{IncludeDir.ShaderWnd}",
 		"%{IncludeDir.ShaderWnd}/src",
 

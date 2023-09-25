@@ -3,9 +3,8 @@
 //
 
 #include "pch.h"
-#include "framework.h"
-#include "Renderer.h"
 
+#include "Resource.h"
 #include "MainFrm.h"
 
 #ifdef _DEBUG
