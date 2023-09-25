@@ -50,10 +50,9 @@ project "Renderer"
 		("%{prj.name}/res/Toolbar256.bmp"),
 		("%{prj.name}/res/UserImages.bmp"),
 
-		("%{prj.name}/res/Toolbar256.bmp"),
-		("%{prj.name}/res/UserImages.bmp"),
+		-- Models / Textures
 		"%{prj.name}/models/*",
-		"%{prj.name}/textures/*",
+		"%{prj.name}/textures/*"
 	}
 
 	includedirs
