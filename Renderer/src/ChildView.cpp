@@ -5,8 +5,8 @@
 #include "pch.h"
 
 #include "framework.h"
-#include "Renderer.h"
 #include "ShaderHeaders.h"
+#include "ShaderPaths.h"
 #include "ChildView.h"
 
 #ifdef _DEBUG
@@ -48,36 +48,36 @@ void CChildView::InitGL()
 	m_cubeTex.LoadFiles(L"textures/right.jpg", L"textures/left.jpg", L"textures/top.jpg",
 		L"textures/bottom.jpg", L"textures/front.jpg", L"textures/back.jpg");
 	m_skybox.CreateCube();
-	m_skybox.m_program = LoadShaders("shaders/vertexSky.glsl", "shaders/fragmentSky.glsl");
+	m_skybox.m_program = LoadShaders(VERTEX_SKY, FRAGMENT_SKY);
 	m_skybox.InitGL();
 
 	// Load the Bunny
 	m_bunnyTex.LoadFile(L"models/bunny-atlas.jpg");
 	m_bunny.LoadOBJ("models/bunny.obj");
-	m_bunny.m_program = LoadShaders("shaders/vertex.glsl", "shaders/fragment.glsl");
+	m_bunny.m_program = LoadShaders(VERTEX_MESH, FRAGMENT_MESH);
 	m_bunny.InitGL();
 
 	// Load the Fish
 	m_fishTex.LoadFile(L"models/BLUEGILL.bmp");
 	m_fish.LoadOBJ("models/fish4.obj");
-	m_fish.m_program = LoadShaders("shaders/vertex.glsl", "shaders/fragment.glsl");
+	m_fish.m_program = LoadShaders(VERTEX_MESH, FRAGMENT_MESH);
 	m_fish.InitGL();
 
 	// Regular Sphere
 	m_sphereTex.LoadFile(L"textures/bumpmap.jpg");
 	m_sphere.SetRadius(3);
-	m_sphere.m_program = LoadShaders("shaders/vertexSphere.glsl", "shaders/fragmentSphere.glsl");
+	m_sphere.m_program = LoadShaders(VERTEX_SPHERE, FRAGMENT_SPHERE);
 	m_sphere.InitGL();
 
 	// Metallic Sphere
 	m_metallicSphere.SetRadius(3);
-	m_metallicSphere.m_program = LoadShaders("shaders/vertexSphere2.glsl", "shaders/fragmentSphere2.glsl");
+	m_metallicSphere.m_program = LoadShaders(VERTEX_SPHERE_2, FRAGMENT_SPHERE_2);
 	m_metallicSphere.InitGL();
 
 	// Torus
 	//m_torus.SetR1(3);
 	//m_torus.SetR2(3);
-	m_torus.m_program = LoadShaders("shaders/vertexSphere2.glsl", "shaders/fragmentSphere2.glsl");
+	m_torus.m_program = LoadShaders(VERTEX_SPHERE_2, FRAGMENT_SPHERE_2);
 	m_torus.InitGL();
 }
 
