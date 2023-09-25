@@ -1,6 +1,6 @@
 #pragma once
-#include "ShaderWnd.h"
-#include "gl/gl.h"
+
+#include "ShaderHeaders.h"
 #include "graphics/GrTexture.h"
 
 //! This class allows you to draw a torus

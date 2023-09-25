@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ShaderWnd.h"
+#include "ShaderHeaders.h"
 
 class CMesh
 {

@@ -1,7 +1,6 @@
 #pragma once
 
-#include "ShaderWnd.h"
-#include "gl/gl.h"
+#include "ShaderHeaders.h"
 #include "graphics/GrTexture.h"
 
 class CSphere

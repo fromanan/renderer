@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "ShaderHeaders.h"
+
 #include "ShaderWnd.h"
 
 #include "Mesh.h"

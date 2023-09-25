@@ -6,6 +6,7 @@
 
 #include "framework.h"
 #include "Renderer.h"
+#include "ShaderHeaders.h"
 #include "ChildView.h"
 
 #ifdef _DEBUG
