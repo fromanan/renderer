@@ -226,4 +226,4 @@ void CChildView::RenderGL()
 	m_skybox.RenderGL();
 }
 
-void CChildView::CleanGL() { }
+void CChildView::CleanGL() {}
