@@ -45,6 +45,9 @@
     <ClInclude Include="src\Mesh.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\MeshFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\Object.h">
       <Filter>src</Filter>
     </ClInclude>
