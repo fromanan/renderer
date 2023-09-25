@@ -1,9 +1,11 @@
 #pragma once
 
 #include "ShaderHeaders.h"
+
+#include "Drawawble.h"
 #include "graphics/GrTexture.h"
 
-class CSphere
+class CSphere : public Drawable
 {
 public:
     CSphere();
@@ -17,22 +19,14 @@ private:
 
     double m_radius;
 	
-	CGrTexture   *m_texture;  // Texture to use for the sphere
-
-public:	
-	void SetTexture(CGrTexture *texture) {m_texture = texture;}
-    CGrTexture *GetTexture() {return m_texture;}
-
 public:
-	GLuint m_program;
 	GLuint m_vao;
 	GLuint m_vertexVBO;
 	GLuint m_normalVBO;
 	GLuint m_texVBO;
 
-	void InitGL();
-	void RenderGL();
-	void CleanGL();
+	void InitGL() override;
+	void RenderGL() override;
 private:
 	std::vector<vec3> vertexArray;
 	std::vector<vec3> normalArray;

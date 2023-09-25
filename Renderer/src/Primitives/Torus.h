@@ -1,11 +1,13 @@
 #pragma once
 
 #include "ShaderHeaders.h"
+
+#include "Drawawble.h"
 #include "graphics/GrTexture.h"
 
 //! This class allows you to draw a torus
 
-class CTorus
+class CTorus : public Drawable
 {
 public:
     CTorus();
@@ -50,23 +52,16 @@ public:
 
 
     /// Shader-based OpenGL Properties
-    void InitGL();
-    void RenderGL();
-    void CleanGL();
+    void InitGL() override;
+    void RenderGL() override;
 
 public:
-    void SetTexture(CGrTexture* texture) { m_texture = texture; }
-    CGrTexture* GetTexture() { return m_texture; }
-
-    GLuint m_program;
     GLuint m_vao;
     GLuint m_vertexVBO;
     GLuint m_normalVBO;
     GLuint m_texVBO;
 
 private:
-    CGrTexture* m_texture;  // Texture to use for the sphere
-
     std::vector<vec3> vertexArray;
     std::vector<vec3> normalArray;
     std::vector<vec2> texArray;

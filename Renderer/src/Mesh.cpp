@@ -50,7 +50,7 @@ void CMesh::InitGL()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 0, nullptr);
 }
 
-void CMesh::RenderGL() const
+void CMesh::RenderGL()
 {
     glUseProgram(m_program);
     glBindVertexArray(m_vao);

@@ -2,17 +2,17 @@
 
 #include "ShaderHeaders.h"
 
-class CMesh
+#include "Drawawble.h"
+
+class CMesh : public Drawable
 {
 public:
     CMesh();
     virtual ~CMesh();
 
-    void InitGL();
-    void RenderGL() const;
-    void CleanGL();
+    void InitGL() override;
+    void RenderGL() override;
 
-    GLuint m_program;
     GLuint m_vao;
     GLuint m_vertexVBO;
     GLuint m_normalVBO;
