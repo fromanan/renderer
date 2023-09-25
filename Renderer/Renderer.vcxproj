@@ -207,16 +207,16 @@ xcopy /Q /E /Y /I vendor\ShaderWnd\shaders ..\bin\Dist-windows-x86\$(ProjectName
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Renderer.aps" />
     <None Include="models\bunny.mtl" />
     <None Include="models\bunny.obj" />
     <None Include="models\fish4.mtl" />
     <None Include="models\fish4.obj" />
+    <None Include="res\Renderer.aps" />
     <None Include="res\Renderer.ico" />
     <None Include="res\Renderer.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Renderer.rc" />
+    <ResourceCompile Include="res\Renderer.rc" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="models\BLUEGILL.bmp" />

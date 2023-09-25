@@ -100,7 +100,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Renderer.aps" />
     <None Include="models\bunny.mtl">
       <Filter>models</Filter>
     </None>
@@ -113,6 +112,9 @@
     <None Include="models\fish4.obj">
       <Filter>models</Filter>
     </None>
+    <None Include="res\Renderer.aps">
+      <Filter>res</Filter>
+    </None>
     <None Include="res\Renderer.ico">
       <Filter>res</Filter>
     </None>
@@ -121,7 +123,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Renderer.rc" />
+    <ResourceCompile Include="res\Renderer.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="models\BLUEGILL.bmp">
