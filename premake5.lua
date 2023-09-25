@@ -54,6 +54,8 @@ project (PROJECT_ROOT)
 		("%{prj.name}/res/Toolbar256.bmp"),
 		("%{prj.name}/res/UserImages.bmp"),
 
+		("%{prj.name}/res/Toolbar256.bmp"),
+		("%{prj.name}/res/UserImages.bmp"),
 		"%{prj.name}/models/*",
 		"%{prj.name}/textures/*",
 	}
