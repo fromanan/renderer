@@ -365,13 +365,17 @@ xcopy /Q /E /Y /I vendor\ShaderWnd\shaders ..\bin\Dist-windows-x86_64\$(ProjectN
     <ClInclude Include="src\ChildView.h" />
     <ClInclude Include="src\Drawawble.h" />
     <ClInclude Include="src\File.h" />
+    <ClInclude Include="src\Light.h" />
     <ClInclude Include="src\MainFrm.h" />
+    <ClInclude Include="src\Material.h" />
     <ClInclude Include="src\Mesh.h" />
+    <ClInclude Include="src\Object.h" />
     <ClInclude Include="src\Primitives\Sphere.h" />
     <ClInclude Include="src\Primitives\Torus.h" />
     <ClInclude Include="src\Quaternion.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\Resource.h" />
+    <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\Vector3.h" />
     <ClInclude Include="src\Vector4.h" />
     <ClInclude Include="src\framework.h" />
