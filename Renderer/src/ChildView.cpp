@@ -98,25 +98,25 @@ void CChildView::RenderGL()
 	glUniformMatrix4fv(m_nPVM, 1, GL_FALSE, value_ptr(m_mPVM));
 	glUniformMatrix4fv(m_nVM, 1, GL_FALSE, value_ptr(m_mVM));
 
-	vec4 light_position(-5.f, 5.f, -5.f, 0.f);
-	vec4 light_ambient(0.2f, 0.2f, 0.2f, 1.f);
-	vec4 light_diffuse(1.f, 1.f, 1.f, 1.f);
-	vec4 light_specular(1.f, 1.f, 1.f, 1.f);
+	vec4 lightPosition(-5.f, 5.f, -5.f, 0.f);
+	vec4 lightAmbient(0.2f, 0.2f, 0.2f, 1.f);
+	vec4 lightDiffuse(1.f, 1.f, 1.f, 1.f);
+	vec4 lightSpecular(1.f, 1.f, 1.f, 1.f);
 
-	vec4 material_ambient(1.f, 1.f, 1.f, 1.f);
-	vec4 material_diffuse(1.f, 1.f, 1.f, 1.f);
-	vec4 material_specular(1.f, 1.f, 1.f, 1.f);
-	float material_shininess = 100.0f;
+	vec4 materialAmbient(1.f, 1.f, 1.f, 1.f);
+	vec4 materialDiffuse(1.f, 1.f, 1.f, 1.f);
+	vec4 materialSpecular(1.f, 1.f, 1.f, 1.f);
+	float materialShininess = 100.0f;
 
-	vec4 ambient_product = light_ambient * material_ambient;
-	vec4 diffuse_product = light_diffuse * material_diffuse;
-	vec4 specular_product = light_specular * material_specular;
+	vec4 ambientProduct = lightAmbient * materialAmbient;
+	vec4 diffuseProduct = lightDiffuse * materialDiffuse;
+	vec4 specularProduct = lightSpecular * materialSpecular;
 
-	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambient_product));
-	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuse_product));
-	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specular_product));
-	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(light_position));
-	glUniform1f(glGetUniformLocation(m_program, "Shininess"), material_shininess);
+	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambientProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuseProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specularProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(lightPosition));
+	glUniform1f(glGetUniformLocation(m_program, "Shininess"), materialShininess);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_bunnyTex.TexName());
@@ -140,11 +140,11 @@ void CChildView::RenderGL()
 	glUniformMatrix4fv(m_nPVM, 1, GL_FALSE, value_ptr(PVM));
 	glUniformMatrix4fv(m_nVM, 1, GL_FALSE, value_ptr(VM));
 
-	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambient_product));
-	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuse_product));
-	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specular_product));
-	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(light_position));
-	glUniform1f(glGetUniformLocation(m_program, "Shininess"), material_shininess);
+	glUniform4fv(glGetUniformLocation(m_program, "AmbientProduct"), 1, value_ptr(ambientProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "DiffuseProduct"), 1, value_ptr(diffuseProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "SpecularProduct"), 1, value_ptr(specularProduct));
+	glUniform4fv(glGetUniformLocation(m_program, "LightPosition"), 1, value_ptr(lightPosition));
+	glUniform1f(glGetUniformLocation(m_program, "Shininess"), materialShininess);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_fishTex.TexName());
