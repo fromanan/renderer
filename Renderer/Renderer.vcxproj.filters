@@ -134,7 +134,13 @@
     <Image Include="models\bunny-atlas.jpg">
       <Filter>models</Filter>
     </Image>
-    <Image Include="res\Renderer.bmp">
+    <Image Include="res\Toolbar.bmp">
+      <Filter>res</Filter>
+    </Image>
+    <Image Include="res\Toolbar256.bmp">
+      <Filter>res</Filter>
+    </Image>
+    <Image Include="res\UserImages.bmp">
       <Filter>res</Filter>
     </Image>
     <Image Include="textures\back.jpg">

@@ -221,7 +221,6 @@ xcopy /Q /E /Y /I vendor\ShaderWnd\shaders ..\bin\Dist-windows-x86\$(ProjectName
   <ItemGroup>
     <Image Include="models\BLUEGILL.bmp" />
     <Image Include="models\bunny-atlas.jpg" />
-    <Image Include="res\Renderer.bmp" />
     <Image Include="textures\back.jpg" />
     <Image Include="textures\bottom.jpg" />
     <Image Include="textures\bumpmap.jpg" />
