@@ -1,4 +1,3 @@
-	architecture "x86"
 package.path = './?.lua;' .. package.path;
 PremakeHelpers = require("PremakeHelpers");
 
@@ -17,6 +16,12 @@ workspace (PROJECT_ROOT)
 		"Debug",
 		"Release",
 		"Dist"
+	}
+
+	platforms
+	{
+		"Win32",
+		"Win64"
 	}
 
 	startproject (PROJECT_ROOT)
