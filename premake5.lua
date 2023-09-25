@@ -3,6 +3,16 @@ workspace "Renderer"
 package.path = './?.lua;' .. package.path;
 PremakeHelpers = require("PremakeHelpers");
 
+outputdir = PremakeHelpers.OutputDirectory;
+
+PROJECT_ROOT = "Renderer";
+
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {
+	ShaderWnd = PROJECT_ROOT .. "/vendor/ShaderWnd"
+};
+
+workspace (PROJECT_ROOT)
 	configurations
 	{
 		"Debug",
@@ -12,12 +22,7 @@ PremakeHelpers = require("PremakeHelpers");
 
 	startproject "Renderer"
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
-
--- Include directories relative to root folder (solution directory)
-IncludeDir = {}
-IncludeDir["ShaderWnd"] = "Renderer/vendor/ShaderWnd"
-IncludeDir["GLM"] = "Renderer/vendor/ShaderWnd/vendor/glm"
+	startproject (PROJECT_ROOT)
 
 include "Renderer/vendor/ShaderWnd"
 
@@ -37,9 +42,10 @@ project "Renderer"
 
 	files
 	{
-		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.hpp",
-		"%{prj.name}/src/**.cpp",
+		-- Source Files
+		PremakeHelpers.IncludeCHeaders,
+		PremakeHelpers.IncludeCPPHeaders,
+		PremakeHelpers.IncludeCPPSources,
 
 		-- Resource Files
 		("%{prj.name}/res/" .. PROJECT_ROOT .. ".rc"),
@@ -97,8 +103,8 @@ project "Renderer"
 
 	postbuildcommands
 	{
-		("{COPYDIR} models ../bin/" .. outputdir .. "/%{prj.name}/models"),
-		("{COPYDIR} textures ../bin/" .. outputdir .. "/%{prj.name}/textures"),
+		PremakeHelpers.CopyToOutput("models"),
+		PremakeHelpers.CopyToOutput("textures"),
 		("{COPYDIR} vendor/ShaderWnd/shaders ../bin/" .. outputdir .. "/%{prj.name}/shaders")
 	}
 
