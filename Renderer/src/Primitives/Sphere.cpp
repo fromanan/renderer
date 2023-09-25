@@ -2,8 +2,6 @@
 #include "Sphere.h"
 #include <cmath>
 
-constexpr double GR_PI = 3.1415926535897932384626433832795;
-
 inline void Normalize3(GLdouble* v)
 {
     const GLdouble len = sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
@@ -83,14 +81,14 @@ void CSphere::SphereFace(int p_recurse, double p_radius, double* a, double* b, d
     else
     {
         // What's the texture coordinate for this normal?
-        double tx1 = atan2(a[0], a[2]) / (2. * GR_PI) + 0.5;
-        double ty1 = asin(a[1]) / GR_PI + .5;
         texArray.push_back(vec2(tx1, ty1));
         normalArray.push_back(vec3(a[0], a[1], a[2]));
         vertexArray.push_back(vec3(a[0] * p_radius, a[1] * p_radius, a[2] * p_radius));
 
-        double tx2 = atan2(b[0], b[2]) / (2. * GR_PI) + 0.5;
-        double ty2 = asin(b[1]) / GR_PI + .5;
+        double tx1 = atan2(a[0], a[2]) / M_2PI + 0.5;
+        double ty1 = asin(a[1]) / M_PI + .5;
+        double tx2 = atan2(b[0], b[2]) / M_2PI + 0.5;
+        double ty2 = asin(b[1]) / M_PI + .5;
         // Test for this coordinate on the other side of the
         // texture from the first coordinate.
         if (tx2 < 0.75 && tx1 > 0.75)
@@ -102,8 +100,8 @@ void CSphere::SphereFace(int p_recurse, double p_radius, double* a, double* b, d
         vertexArray.push_back(vec3(b[0] * p_radius, b[1] * p_radius, b[2] * p_radius));
 
 
-        double tx3 = atan2(c[0], c[2]) / (2. * GR_PI) + 0.5;
-        double ty3 = asin(c[1]) / GR_PI + .5;
+        double tx3 = atan2(c[0], c[2]) / M_2PI + 0.5;
+        double ty3 = asin(c[1]) / M_PI + .5;
         // Test for this coordinate on the other side of the
         // texture from the first coordinate.
         if (tx3 < 0.75 && tx1 > 0.75)

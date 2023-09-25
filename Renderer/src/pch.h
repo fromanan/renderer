@@ -8,4 +8,7 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
-#include <vector>
+#include <vector>constexpr double M_PI = 3.1415926535897932384626433832795;
+
+constexpr double M_PI = 3.1415926535897932384626433832795;
+constexpr double M_2PI = 2. * M_PI;

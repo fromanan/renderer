@@ -3,10 +3,6 @@
 
 #include <cmath>
 
-const double GR_PI = 3.1415926535897932384626433832795;
-const double GR_2PI = 2. * GR_PI;
-
-
 CTorus::CTorus()
 {
     //
@@ -75,8 +71,8 @@ void CTorus::InitGL()
 void CTorus::Draw()
 {
     // How large are the angular steps in radians
-    const double step1r = 2. * GR_PI / m_steps1;
-    const double step2r = 2. * GR_PI / m_steps2;
+    const double step1r = M_2PI / m_steps1;
+    const double step2r = M_2PI / m_steps2;
 
     // We build the torus in slices that go from a1a to a1b
     double a1a = 0;
@@ -140,8 +136,8 @@ void CTorus::TorusVertex(double a1, double r1, double a2, double r2)
     v[2] = centerz + r2 * n[2];
 
     // Calculate the Texture Coordinates
-    tx = 10. * a1 / GR_2PI;
-    ty = 2. * a2 / GR_2PI;
+    const double tx = 10. * a1 / M_2PI;
+    const double ty = 2. * a2 / M_2PI;
 
     // Push the Points to the Arrays
     texArray.push_back(vec2(tx, ty));
