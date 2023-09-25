@@ -68,7 +68,12 @@ project (PROJECT_ROOT)
 	{
 		"%{prj.name}/src",
 		"%{IncludeDir.ShaderWnd}",
-		"%{IncludeDir.ShaderWnd}/src"
+		"%{IncludeDir.ShaderWnd}/src",
+
+		"%{IncludeDir.ShaderWnd}/shaders",
+		"%{IncludeDir.ShaderWnd}/vendor/glm",
+		"%{IncludeDir.ShaderWnd}/vendor/glm/gtc",
+		"%{IncludeDir.ShaderWnd}/vendor/glew-1.9.0/include/GL"
 	}
 
 	links
