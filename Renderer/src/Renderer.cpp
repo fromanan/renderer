@@ -10,6 +10,10 @@
 #include "Renderer.h"
 #include "MainFrm.h"
 
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
 // CRendererApp
 
 BEGIN_MESSAGE_MAP(CRendererApp, CWinApp)
