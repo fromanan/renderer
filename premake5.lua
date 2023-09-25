@@ -40,12 +40,15 @@ project "Renderer"
 		"%{prj.name}/src/**.hpp",
 		"%{prj.name}/src/**.cpp",
 
-		"%{prj.name}/Renderer.rc",
-		"%{prj.name}/Renderer.aps",
+		-- Resource Files
+		("%{prj.name}/res/" .. PROJECT_ROOT .. ".rc"),
+		("%{prj.name}/res/" .. PROJECT_ROOT .. ".aps"),
+		("%{prj.name}/res/" .. PROJECT_ROOT .. ".ico"),
+		("%{prj.name}/res/" .. PROJECT_ROOT .. ".rc2"),
 
-		"%{prj.name}/res/Renderer.ico",
-		"%{prj.name}/res/Renderer.rc2",
-		"%{prj.name}/res/Renderer.bmp",
+		("%{prj.name}/res/Toolbar.bmp"),
+		("%{prj.name}/res/Toolbar256.bmp"),
+		("%{prj.name}/res/UserImages.bmp"),
 
 		"%{prj.name}/models/*",
 		"%{prj.name}/textures/*",
