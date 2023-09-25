@@ -1,6 +1,14 @@
 workspace "Renderer"
 	architecture "x86"
 
+PROJECT_ROOT = "Renderer";
+
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {
+	ShaderWnd = PROJECT_ROOT .. "/vendor/ShaderWnd"
+};
+
+workspace (PROJECT_ROOT)
 	configurations
 	{
 		"Debug",
@@ -8,19 +16,15 @@ workspace "Renderer"
 		"Dist"
 	}
 
-	startproject "Renderer"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
--- Include directories relative to root folder (solution directory)
-IncludeDir = {}
-IncludeDir["ShaderWnd"] = "Renderer/vendor/ShaderWnd"
-IncludeDir["GLM"] = "Renderer/vendor/ShaderWnd/vendor/glm"
+	startproject (PROJECT_ROOT)
 
 include "Renderer/vendor/ShaderWnd"
 
-project "Renderer"
-	location "Renderer"
+project (PROJECT_ROOT)
+	location (PROJECT_ROOT)
 	kind "ConsoleApp"
 	language "C++"
 	runtime "Release"
@@ -31,8 +35,8 @@ project "Renderer"
 
 	entrypoint "wWinMainCRTStartup"
 
-	pchheader "pch.h"
-	pchsource "Renderer/src/pch.cpp"
+	pchheader ("pch.h")
+	pchsource (PROJECT_ROOT .. "/src/pch.cpp")
 
 	files
 	{
