@@ -8,6 +8,9 @@
 #include "afxdialogex.h"
 
 #include "Renderer.h"
+
+#include <iostream>
+
 #include "AboutDlg.h"
 #include "MainFrm.h"
 
@@ -27,12 +30,13 @@ CRendererApp::CRendererApp() noexcept
 {
 	// support Restart Manager
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_ALL_ASPECTS;
-#ifdef _MANAGED
+	
 	// If the application is built using Common Language Runtime support (/clr):
 	//     1) This additional setting is needed for Restart Manager support to work properly.
 	//     2) In your project, you must add a reference to System.Windows.Forms in order to build.
+	#ifdef _MANAGED
 	System::Windows::Forms::Application::SetUnhandledExceptionMode(System::Windows::Forms::UnhandledExceptionMode::ThrowException);
-#endif
+	#endif
 
 	// TODO: replace application ID string below with unique ID string; recommended
 	// format for string is CompanyName.ProductName.SubProduct.VersionInformation
@@ -55,22 +59,21 @@ int CRendererApp::Run()
 #endif
 
 // The one and only CRendererApp object
-
 CRendererApp Instance;
 
 // CRendererApp initialization
-
 BOOL CRendererApp::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
 	// visual styles.  Otherwise, any window creation will fail.
-	INITCOMMONCONTROLSEX InitCtrls;
-	InitCtrls.dwSize = sizeof(InitCtrls);
+	INITCOMMONCONTROLSEX initControls;
+	initControls.dwSize = sizeof(initControls);
+	
 	// Set this to include all the common control classes you want to use
 	// in your application.
-	InitCtrls.dwICC = ICC_WIN95_CLASSES;
-	InitCommonControlsEx(&InitCtrls);
+	initControls.dwICC = ICC_WIN95_CLASSES;
+	InitCommonControlsEx(&initControls);
 
 	CWinApp::InitInstance();
 

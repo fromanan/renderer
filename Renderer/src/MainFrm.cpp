@@ -21,7 +21,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_WM_SETFOCUS()
 END_MESSAGE_MAP()
 
-static UINT indicators[] =
+static UINT INDICATORS[] =
 {
 	ID_SEPARATOR,           // status line indicator
 	ID_INDICATOR_CAPS,
@@ -30,15 +30,9 @@ static UINT indicators[] =
 };
 
 // CMainFrame construction/destruction
+CMainFrame::CMainFrame() noexcept = default;
 
-CMainFrame::CMainFrame() noexcept
-{
-	// TODO: add member initialization code here
-}
-
-CMainFrame::~CMainFrame()
-{
-}
+CMainFrame::~CMainFrame() = default;
 
 int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
@@ -64,30 +58,30 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		TRACE0("Failed to create status bar\n");
 		return -1;      // fail to create
 	}
-	m_wndStatusBar.SetIndicators(indicators, sizeof(indicators)/sizeof(UINT));
+	m_wndStatusBar.SetIndicators(INDICATORS, sizeof(INDICATORS)/sizeof(UINT));
 
-	// TODO: Delete these three lines if you don't want the toolbar to be dockable
+	// Delete these three lines if you don't want the toolbar to be dockable
 	m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
 	EnableDocking(CBRS_ALIGN_ANY);
 	DockControlBar(&m_wndToolBar);
-
 
 	return 0;
 }
 
 BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
 {
-	if( !CFrameWnd::PreCreateWindow(cs) )
+	if(!CFrameWnd::PreCreateWindow(cs))
 		return FALSE;
-	// TODO: Modify the Window class or styles here by modifying
-	//  the CREATESTRUCT cs
-
+	
+	// Modify the Window class or styles here by modifying the CREATESTRUCT cs
 	cs.dwExStyle &= ~WS_EX_CLIENTEDGE;
 	cs.lpszClass = AfxRegisterWndClass(0);
 	return TRUE;
 }
 
-// CMainFrame diagnostics
+///
+/// CMainFrame diagnostics
+///
 
 #ifdef _DEBUG
 void CMainFrame::AssertValid() const
@@ -99,9 +93,11 @@ void CMainFrame::Dump(CDumpContext& dc) const
 {
 	CFrameWnd::Dump(dc);
 }
-#endif //_DEBUG
+#endif
 
-// CMainFrame message handlers
+///
+/// CMainFrame message handlers
+///
 
 void CMainFrame::OnSetFocus(CWnd* /*pOldWnd*/)
 {
@@ -118,4 +114,3 @@ BOOL CMainFrame::OnCmdMsg(UINT nID, int nCode, void* pExtra, AFX_CMDHANDLERINFO*
 	// otherwise, do default handling
 	return CFrameWnd::OnCmdMsg(nID, nCode, pExtra, pHandlerInfo);
 }
-

@@ -1,7 +1,7 @@
 ﻿#pragma once
 
-#include <GL/glu.h>
 #include <cassert>
+#include <GL/glu.h>
 
 #ifdef _DEBUG
 #undef THIS_FILE

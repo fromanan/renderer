@@ -47,7 +47,7 @@ GLuint CGrCubeTexture::TexName()
     glActiveTexture(GL_TEXTURE0);
 
     glBindTexture(GL_TEXTURE_CUBE_MAP, m_texname);
-    for (GLuint i = 0; i < 6; i++)
+    for (GLint i = 0; i < 6; i++)
     {
         const unsigned char* image = m_textures[i].ImageBits();
         const int width = m_textures[i].Width();

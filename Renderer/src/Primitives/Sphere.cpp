@@ -43,19 +43,19 @@ void CSphere::InitGL()
 
     glGenBuffers(1, &m_vertexVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_vertexVBO);
-    glBufferData(GL_ARRAY_BUFFER, vertexArray.size() * sizeof(vec3), &vertexArray[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, vertexArray.size() * sizeof(vec3), vertexArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 
     glGenBuffers(1, &m_normalVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_normalVBO);
-    glBufferData(GL_ARRAY_BUFFER, normalArray.size() * sizeof(vec3), &normalArray[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, normalArray.size() * sizeof(vec3), normalArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 
     glGenBuffers(1, &m_texVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_texVBO);
-    glBufferData(GL_ARRAY_BUFFER, texArray.size() * sizeof(vec2), &texArray[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, texArray.size() * sizeof(vec2), texArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(2);
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 0, nullptr);
 }
@@ -81,12 +81,12 @@ void CSphere::SphereFace(int p_recurse, double p_radius, double* a, double* b, d
     else
     {
         // What's the texture coordinate for this normal?
-        texArray.push_back(vec2(tx1, ty1));
-        normalArray.push_back(vec3(a[0], a[1], a[2]));
-        vertexArray.push_back(vec3(a[0] * p_radius, a[1] * p_radius, a[2] * p_radius));
-
         double tx1 = atan2(a[0], a[2]) / M_2PI + 0.5;
         double ty1 = asin(a[1]) / M_PI + .5;
+        texArray.emplace_back(tx1, ty1);
+        normalArray.emplace_back(a[0], a[1], a[2]);
+        vertexArray.emplace_back(a[0] * p_radius, a[1] * p_radius, a[2] * p_radius);
+
         double tx2 = atan2(b[0], b[2]) / M_2PI + 0.5;
         double ty2 = asin(b[1]) / M_PI + .5;
         // Test for this coordinate on the other side of the
@@ -95,9 +95,9 @@ void CSphere::SphereFace(int p_recurse, double p_radius, double* a, double* b, d
             tx2 += 1.0;
         else if (tx2 > 0.75 && tx1 < 0.75)
             tx2 -= 1.0;
-        texArray.push_back(vec2(tx2, ty2));
-        normalArray.push_back(vec3(b[0], b[1], b[2]));
-        vertexArray.push_back(vec3(b[0] * p_radius, b[1] * p_radius, b[2] * p_radius));
+        texArray.emplace_back(tx2, ty2);
+        normalArray.emplace_back(b[0], b[1], b[2]);
+        vertexArray.emplace_back(b[0] * p_radius, b[1] * p_radius, b[2] * p_radius);
 
 
         double tx3 = atan2(c[0], c[2]) / M_2PI + 0.5;
@@ -108,9 +108,9 @@ void CSphere::SphereFace(int p_recurse, double p_radius, double* a, double* b, d
             tx3 += 1.0;
         else if (tx3 > 0.75 && tx1 < 0.75)
             tx3 -= 1.0;
-        texArray.push_back(vec2(tx3, ty3));
-        normalArray.push_back(vec3(c[0], c[1], c[2]));
-        vertexArray.push_back(vec3(c[0] * p_radius, c[1] * p_radius, c[2] * p_radius));
+        texArray.emplace_back(tx3, ty3);
+        normalArray.emplace_back(c[0], c[1], c[2]);
+        vertexArray.emplace_back(c[0] * p_radius, c[1] * p_radius, c[2] * p_radius);
     }
 }
 

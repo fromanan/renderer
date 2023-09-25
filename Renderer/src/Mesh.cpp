@@ -12,7 +12,10 @@
 
 using namespace std;
 
-CMesh::CMesh() = default;
+CMesh::CMesh()
+{
+    return;
+}
 
 CMesh::~CMesh() = default;
 
@@ -22,7 +25,7 @@ void CMesh::InitGL()
     {
         normalArray.push_back(m_normals[v->n]);
         vertexArray.push_back(m_vertices[v->v]);
-        texArray.push_back(m_tvertices[v->t]);
+        texArray.push_back(m_tVertices[v->t]);
     }
 
     glGenVertexArrays(1, &m_vao);
@@ -30,13 +33,13 @@ void CMesh::InitGL()
 
     glGenBuffers(1, &m_vertexVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_vertexVBO);
-    glBufferData(GL_ARRAY_BUFFER, vertexArray.size() * sizeof(vec3), &vertexArray[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, vertexArray.size() * sizeof(vec3), vertexArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 
     glGenBuffers(1, &m_normalVBO);
     glBindBuffer(GL_ARRAY_BUFFER, m_normalVBO);
-    glBufferData(GL_ARRAY_BUFFER, normalArray.size() * sizeof(vec3), &normalArray[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, normalArray.size() * sizeof(vec3), normalArray.data(), GL_STATIC_DRAW);
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
 

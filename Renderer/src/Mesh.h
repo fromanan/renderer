@@ -20,13 +20,13 @@ public:
 
     void AddVertex(const vec3& v) { m_vertices.push_back(v); }
     void AddNormal(const vec3& n) { m_normals.push_back(n); }
-    void AddTexCoord(const vec2& t) { m_tvertices.push_back(t); }
+    void AddTexCoord(const vec2& t) { m_tVertices.push_back(t); }
     void AddTriangleVertex(int v, int n, int t);
 
 private:
     std::vector<vec3> m_vertices;
     std::vector<vec3> m_normals;
-    std::vector<vec2> m_tvertices;
+    std::vector<vec2> m_tVertices;
 
     std::vector<vec3> vertexArray;
     std::vector<vec3> normalArray;
